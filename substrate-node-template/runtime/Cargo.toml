@@ -15,6 +15,7 @@ std = [
     'support/std',
     'balances/std',
     'executive/std',
+    'contract/std',
     'aura/std',
     'indices/std',
     'primitives/std',
@@ -67,6 +68,12 @@ rev = '2ba93e317c637ffee06153e15ca7c39f6812e88a'
 default_features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'srml-indices'
+rev = '2ba93e317c637ffee06153e15ca7c39f6812e88a'
+
+[dependencies.contract]
+default_features = false
+git = 'https://github.com/paritytech/substrate.git'
+package = 'srml-contract'
 rev = '2ba93e317c637ffee06153e15ca7c39f6812e88a'
 
 [dependencies.parity-codec]

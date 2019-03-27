@@ -1,7 +1,7 @@
 use primitives::{ed25519, sr25519, Pair};
 use node_template_runtime::{
 	AccountId, GenesisConfig, ConsensusConfig, TimestampConfig, BalancesConfig,
-	SudoConfig, IndicesConfig,
+	SudoConfig, IndicesConfig, ContractConfig,
 };
 use substrate_service;
 
@@ -111,6 +111,15 @@ fn testnet_genesis(initial_authorities: Vec<AuthorityId>, endowed_accounts: Vec<
 			creation_fee: 0,
 			balances: endowed_accounts.iter().cloned().map(|k|(k, 1 << 60)).collect(),
 			vesting: vec![],
+		}),
+		contract: Some(ContractConfig {
+			contract_fee: 21,
+			call_base_fee: 135,
+			create_base_fee: 175,
+			gas_price: 1,
+			max_depth: 1024,
+			block_gas_limit: 10_000_000,
+			current_schedule: Default::default(),
 		}),
 		sudo: Some(SudoConfig {
 			key: root_key,
