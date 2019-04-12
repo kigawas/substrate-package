@@ -2,8 +2,8 @@
 // post({sender: runtime.indices.ss58Decode('F7Hs'), call: calls.demo.setPayment(1000)}).tie(console.log)
 
 use parity_codec::Encode;
-use support::{StorageValue, dispatch::Result, decl_module, decl_storage,
-	traits::{Currency, WithdrawReason, ExistenceRequirement}};
+use support::{StorageValue, dispatch::Result, decl_module, decl_storage};
+use support::traits::{Currency, WithdrawReason, ExistenceRequirement};
 use runtime_primitives::traits::{Zero, Hash, Saturating};
 use system::ensure_signed;
 
